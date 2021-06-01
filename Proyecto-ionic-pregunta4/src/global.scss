@@ -1,0 +1,160 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+@import '~@angular/material/theming';
+@include mat-core();
+$base-project-primary: mat-palette($mat-gray);
+$base-project-accent: mat-palette($mat-pink, A200, A100, A400);
+$base-project-warn: mat-palette($mat-red);
+$base-project-theme: mat-light-theme($base-project-primary, $base-project-accent, $base-project-warn);
+
+@include angular-material-theme($base-project-theme);
+
+
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  border: none;
+  outline: none;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+$indigo-palette: (
+  50: #d8e3e7,
+  100: #51c4d3,
+  200: #136e82,
+  300: #132c33,
+  // ... continues to 900
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: white,
+    // ... continues to 900
+  )
+);
+
+
+.component-container {
+  background-color: #51c4d3;
+  height: 95.5vh;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #d8e3e7;
+}
+
+.component-inner-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 600px;
+}
+
+.form-container {
+  border: solid 2px #d8e3e7;
+  border-radius: 10px;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  -webkit-box-shadow: 10px 11px 14px -9px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 11px 14px -9px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 11px 14px -9px rgba(0, 0, 0, 0.75);
+}
+
+.image-container {
+  text-align: center;
+}
+
+.user-logo {
+  height: 10rem;
+  border-radius: 100px;
+  border: solid 5px #136e82;
+}
+
+.logo-app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-logo {
+  width: 55%;
+  border-radius: 10px;
+  border: solid #136e82 3px;
+}
+
+.login-input {
+  width: 80%;
+  height: 1.2rem;
+  border-radius: 5px;
+  padding-left: 1rem;
+  margin-bottom: .5rem;
+  padding-top: .2rem;
+  padding-bottom: .2rem;
+}
+
+.login-label {
+  padding-bottom: .2rem;
+}
+
+login-form-title {
+  color: #132c33;
+  font-weight: bold;
+  margin-bottom: .5rem;
+  text-transform: uppercase;
+}
+
+.login-bottom {
+  background-color: #136e82;
+  padding: .5rem 2rem;
+  border-radius: 5px;
+  margin-top: 1rem;
+  cursor: pointer;
+  &:hover {
+    background-color: #d8e3e7;
+    color: #136e82
+  }
+}
+
+.remember-user{
+  margin-bottom: 1rem;
+}
+.error-info {
+  color: red;
+}
+
+app-header, app-footer {
+  z-index: 50;
+}
+

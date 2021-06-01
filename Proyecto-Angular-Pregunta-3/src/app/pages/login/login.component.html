@@ -1,0 +1,75 @@
+<app-loader *ngIf="loading"></app-loader>
+<div class="component-container">
+  <div class="component-inner-container">
+    <form [formGroup]="loginForm"  (ngSubmit)="submitForm()">
+      <div class="form-container">
+        <div class="logo-app">
+          <img class="login-logo" src="https://i.pinimg.com/736x/d9/7b/bb/d97bbb08017ac2309307f0822e63d082.jpg" alt="">
+        </div>
+        <div class="">
+          <div class="login-form-title">
+            Ingreso de Usuarios
+          </div>
+
+          <div class="">
+            <div class="">
+              <div class="login-label">Usuario</div>
+
+              <input type="text"
+                     tabindex="1"
+                     name="user"
+                     class="login-input"
+                     value=""
+                     formControlName="user"
+                     autocomplete="off"
+                     required>
+              <br>
+              <small *ngIf="loginForm.get('user').errors?.required && loginForm.get('user').touched" class="error-info">
+                &nbsp;Este campo es requerido
+              </small>
+              <small *ngIf="loginForm.get('user').errors?.minlength && loginForm.get('user').touched" class="error-info">
+                &nbsp;Debe tener al menos 10 caracteres
+              </small>
+            </div>
+
+            <div class="">
+              <div class="login-label">Contrase&ntilde;a</div>
+
+              <input
+                type="password"
+                tabindex="2"
+                name="password"
+                value=""
+                class="login-input"
+                formControlName="password"
+                autocomplete="off"
+                required>
+              <br>
+              <small *ngIf="loginForm.get('password').errors?.required && loginForm.get('password').touched"
+                     class="error-info">
+                &nbsp;Este campo es requerido
+              </small>
+            </div>
+
+            <div class="remember-user" (click)="activate()">
+              <input
+                type="checkbox"
+                name="remember"
+                formControlName="remember"
+                id="remember"
+                tabindex="3"
+              >
+              <label for="remember">&nbsp;Recordar Usuario</label>
+            </div>
+
+            <div class="">
+              <a class="login-bottom" tabindex="5" (click)="submitForm()">Ingresar <i
+                class="" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+

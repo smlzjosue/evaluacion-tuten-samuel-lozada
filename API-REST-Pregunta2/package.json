@@ -1,0 +1,19 @@
+{
+  "name": "backend-prueba",
+  "version": "1.0.0",
+  "description": "Prueba tuten",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app/server.js"
+  },
+  "author": "Samuel Lozada",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^7.27.0",
+    "nodemon": "^2.0.7"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  }
+}
